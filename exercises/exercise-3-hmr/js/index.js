@@ -8,7 +8,3 @@ var result = mathDoer(7, 3);
 
 // Console.log statements are reprinted on every reload.
 console.log('Math result:' + result);
-
-if (module.hot) {
-  module.hot.accept();
-}
