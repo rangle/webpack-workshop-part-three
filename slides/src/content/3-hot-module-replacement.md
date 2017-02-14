@@ -21,8 +21,8 @@
 
 - It sounds scary, but thanks to good tools, it's actually not radically more difficult than working with, say, livereload
 - Requires two parts, you just need to make sure you have a mechanism present to account for these two things:
-- **HMR Server**: Runs in parallel/subset to your web-server, and tracks which modules need to be reloaded, communicating that information via websockets to...
-- **HMR Runtime**: Runs client-side, the HMR Runtime accepts news of updates to your app, unloads the old, stale modules and injects updated versions of them.
+- `HMR Server`: Runs in parallel/subset to your web-server, and tracks which modules need to be reloaded, communicating that information via websockets to...
+- `HMR Runtime`: Runs client-side, the HMR Runtime accepts news of updates to your app, unloads the old, stale modules and injects updated versions of them.
 
 ---
 
@@ -30,6 +30,7 @@
 
 - Comes built into webpack-dev-server: `webpack-dev-server --inline --watch --hot`
 - If you're using an express server, you can integrate `webpack-hot-middleware`: https://github.com/glenjamin/webpack-hot-middleware
+- Third option of integrating the `WebpackDevServer` API directly into your node server.
 - Good overview of the above and some other integrations here: http://andrewhfarmer.com/webpack-hmr-tutorial/
 
 ---
@@ -46,9 +47,9 @@ if (module.hot) {
 
 ---
 
-## Side Effects: `.Dispose()ing stale modules'
+## Side Effects: .Dispose-ing stale modules
 - While the HMR code can add and remove modules for you, it doesn't really what your code may have done that it now needs to account for in the transition
-- HMR is basically time travel, and you don't want to end up like the climax of Primer.
+- HMR is basically time travel, and you don't want to end up like the fourth act of Primer.
 - If your module manipulated the DOM, or changed general app state in other ways, you may end up with inconsistencies.
 - We call these artifacts **side effects**
 - You can remove side effects with `module.hot.dispose` on a per-module basis:

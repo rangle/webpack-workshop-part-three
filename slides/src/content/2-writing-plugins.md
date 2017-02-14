@@ -16,20 +16,20 @@
 ```
 "use strict";
 
-class Notifier {
+class BiglyPlugin {
   apply(compiler) {
-
+    //…
   }
 }
 
-module.exports = Notifier;
+module.exports = BiglyPlugin;
 ```
 
 - Once you have this set up, you can react to events and structures exposed to you by the compiler object.
 
 ---
 
-Plugins API: Compiler Instance
+## Plugins API: Compiler Instance
 
 - `run(compiler: Compiler)` Compilation has started.
 - `emit(c: Compilation)` Compilation has finished, and files are emitting.
@@ -47,7 +47,7 @@ compiler.plugin("emit, function(compilation) {
 
 ---
 
-Plugins API: Compilation Instance
+## Plugins API: Compilation Instance
 
 - Extends from the Compiler Instance
 - Representation of the current compilation, including all modules and dependencies

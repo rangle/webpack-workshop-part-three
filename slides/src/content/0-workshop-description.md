@@ -7,7 +7,7 @@
 ## Workshop Structure
 
 - Roughly one and a half hours
-- Five sections
+- Four sections
 - Combination of material and exercises
 - Slides and resolved exercises available
 - Have the slides open in your computer as a guide

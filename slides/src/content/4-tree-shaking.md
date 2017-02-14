@@ -54,3 +54,7 @@ presets: [
 (Duration: 5 minutes)
 
 - Modify the build system in Exercise 5 to enable tree-shaking.
+
+---
+
+# Thanks!
