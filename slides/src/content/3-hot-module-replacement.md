@@ -65,9 +65,9 @@ if (module.hot) {
 
 ## React/Angular
 
-- I've shown you how to accept modules with plain Javascript, but you can get fancier with React/Angular implementations
-- React:
-- Angular:
+- React/Angular implementations
+- React: https://webpack.js.org/guides/hmr-react/
+- Angular: https://github.com/AngularClass/angular2-hmr
 
 ---
 
