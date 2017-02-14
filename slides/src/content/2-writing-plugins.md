@@ -11,6 +11,8 @@
 
 ## Our Approach
 
+- Webpack installs a plugin by calling its apply method, and passes a reference to the Webpack compiler object.
+
 ```
 "use strict";
 
@@ -23,26 +25,43 @@ class Notifier {
 module.exports = Notifier;
 ```
 
+- Once you have this set up, you can react to events and structures exposed to you by the compiler object.
+
 ---
 
 Plugins API: Compiler Instance
 
+- `run(compiler: Compiler)` Compilation has started.
+- `emit(c: Compilation)` Compilation has finished, and files are emitting.
+- `done(stats: Stats)` Triggered upon full completion.
 
-- Available when you //////////
-[https://github.com/webpack/docs/wiki/plugins#the-compiler-instance](https://github.com/webpack/docs/wiki/plugins#the-compiler-instance)
+
+```
+compiler.plugin("emit, function(compilation) {
+    //you are now in the 'emit' phase
+});
+```
+
+- Many more: [https://github.com/webpack/docs/wiki/plugins#the-compiler-instance](https://github.com/webpack/docs/wiki/plugins#the-compiler-instance)
+
 
 ---
 
 Plugins API: Compilation Instance
 
-- Exists within the Compiler Instance
+- Extends from the Compiler Instance
+- Representation of the current compilation, including all modules and dependencies
+- Examples of lifecycle events: loaded, sealed, optimized, chunked, hashed and restored
+
+```
+compiler.plugin('compilation', function(compilation) {
+  compilation.plugin('seal', function() {
+      // Compilation is sealed.
+  });
+});
+```
+
 - [https://github.com/webpack/docs/wiki/plugins#the-compilation-instance](https://github.com/webpack/docs/wiki/plugins#the-compilation-instance)
-
----
-
-Plugins API: Parser Instance
-
-[https://github.com/webpack/docs/wiki/plugins#the-parser-instance-compilerparser](https://github.com/webpack/docs/wiki/plugins#the-parser-instance-compilerparser)
 
 ---
 
