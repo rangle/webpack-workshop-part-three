@@ -16,18 +16,11 @@
 ## Our Approach
 
 - Loaders are expressed as a node module exporting a function
-- Webpack calls this function and passes your resource (either pure, or as a modified result of the last loader up the line)
+- This function should return a string representing the javascript representation of your resource.
+- Webpack calls this function and passes your resource (as it originates, or as modified by the previous loader in line)
 ```
-module.exports = function(text) {
-
-  var query = loaderUtils.parseQuery(this.query),
-      delimiter = query.delimiter || ',',
-      dsv = dsvFormat(delimiter),
-      rows = query.rows,
-      res = rows ? dsv.parseRows(text) : dsv.parse(text);
-  return 'var res = ' + JSON.stringify(res) + ';' +
-    'res.columns = ' + JSON.stringify(res.columns) + ';' +
-    'module.exports = res;';
+module.exports = function(content) {
+  return 'module.exports = ' + content;
 }
 ```
 

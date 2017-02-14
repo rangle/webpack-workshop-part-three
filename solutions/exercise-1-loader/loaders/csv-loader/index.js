@@ -4,14 +4,12 @@ var dsvFormat = require('d3-dsv').dsvFormat;
 module.exports = function(text) {
   this.cacheable();
 
+  // Optional: Using loaderUtils.parseQuery to choose an optional delimiter
   var query = loaderUtils.parseQuery(this.query),
       delimiter = query.delimiter || ',',
       dsv = dsvFormat(delimiter),
-      rows = query.rows,
-      res = rows ? dsv.parseRows(text) : dsv.parse(text);
+      res = dsv.parse(text);
 
-  return 'var res = ' + JSON.stringify(res) + ';' +
-    'res.columns = ' + JSON.stringify(res.columns) + ';' +
-    'module.exports = res;';
+      return 'module.exports = ' + JSON.stringify(res) + ';';
 }
 
