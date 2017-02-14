@@ -27,8 +27,6 @@
     "cross-env": "^2.0.0",
     "css-loader": "^0.23.1",
     "html-webpack-plugin": "^2.22.0",
-    "lodash": "^4.14.2",
-    "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "uglify-loader": "^1.4.0",
     "webpack": "^2.2.1",
