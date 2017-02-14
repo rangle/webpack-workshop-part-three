@@ -36,5 +36,4 @@ npm start
 1. Writing Loaders
 2. Writing Plugins
 3. Hot Module Replacement
-4. Lazy-Loading
-5. Tree-Shaking
+4. Tree-Shaking
