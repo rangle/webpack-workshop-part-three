@@ -1,0 +1,13 @@
+{
+  "name": "webpack-notifier",
+  "version": "1.0.0",
+  "description": "Native notifications for webpack builds",
+  "main": "index.js",
+  "repository": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-notifier": "^5.0.2"
+  }
+}
