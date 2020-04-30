@@ -4,7 +4,9 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base=www"
+    "start": "webpack-dev-server --content-base=www",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "webpack",
@@ -21,6 +23,8 @@
   },
   "dependencies": {
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.1"
-  }
+    "webpack-dev-server": "^1.12.1",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
