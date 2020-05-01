@@ -6,7 +6,9 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && cross-env NODE_ENV=production webpack",
-    "dev": "cross-env NODE_ENV=debug webpack-dev-server --hot"
+    "dev": "cross-env NODE_ENV=debug webpack-dev-server --hot",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -35,6 +37,8 @@
     "webpack-split-by-path": "^0.1.0"
   },
   "dependencies": {
-    "webpack": "^2.2.1"
-  }
+    "webpack": "^2.2.1",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
