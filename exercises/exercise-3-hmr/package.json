@@ -20,7 +20,7 @@
     "url": ""
   },
   "dependencies": {
-    "webpack": "^1.12.2",
+    "webpack": "^2.2.0",
     "webpack-dev-server": "^1.12.1"
   }
 }
